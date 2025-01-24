@@ -1,0 +1,21 @@
+<div class="welcome blur-animation">
+  <h1>
+    Música para o Paulo. <br />
+    De graça!
+  </h1>
+  <app-button
+    [typeButton]="typeButtonEnum.BUTTON"
+    label="Criar conta de graça"
+    (onClick)="redirect(activePageEnum.REGISTER)"
+    ></app-button
+  >
+  <div class="welcome__footer">
+    <p style="margin-right: 1rem">Já possui uma conta?</p>
+    <app-button
+      [typeButton]="typeButtonEnum.LINK"
+      label="Entrar"
+      (onClick)="redirect(activePageEnum.ENTER)"
+      ></app-button
+    >
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<form [formGroup]="form">
+    <input
+      id="name"
+      formControlName="name"
+      type="text"
+      placeholder="Digite seu nome"
+    />
+    <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      <span *ngIf="form.get('name')?.hasError('required')"
+        >O nome é obrigatório.</span
+      >
+      <span *ngIf="form.get('name')?.hasError('minlength')"
+        >O nome deve ter pelo menos 3 caracteres.</span
+      >
+    </div>
+  
+    <input
+      id="email"
+      formControlName="email"
+      type="email"
+      placeholder="Digite seu email"
+    />
+    <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      <span *ngIf="form.get('email')?.hasError('required')"
+        >O email é obrigatório.</span
+      >
+      <span *ngIf="form.get('email')?.hasError('email')"
+        >Por favor, insira um email válido.</span
+      >
+    </div>
+  
+    <input
+      id="phone"
+      formControlName="phone"
+      type="text"
+      placeholder="Número de telefone"
+    />
+    <div *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched">
+      <span *ngIf="form.get('phone')?.hasError('required')"
+        >O número de telefone é obrigatório.</span
+      >
+      <span *ngIf="form.get('phone')?.hasError('pattern')"
+        >Número de telefone inválido. Deve ter 10 ou 11 dígitos.</span
+      >
+    </div>
+  
+    <input
+      id="birthDate"
+      formControlName="birthDate"
+      type="date"
+      placeholder="Data de nascimento"
+    />
+    <div *ngIf="form.get('birthDate')?.invalid && form.get('birthDate')?.touched">
+      <span *ngIf="form.get('birthDate')?.hasError('required')"
+        >A data de nascimento é obrigatória.</span
+      >
+      <span *ngIf="form.get('birthDate')?.hasError('invalidYear')"
+        >A data de nascimento deve ser após 1900.</span
+      >
+    </div>
+  
+    <input
+      id="password"
+      formControlName="password"
+      type="password"
+      placeholder="Escolha sua senha"
+    />
+    <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+      <span *ngIf="form.get('password')?.hasError('required')"
+        >A senha é obrigatória.</span
+      >
+      <span *ngIf="form.get('password')?.hasError('minlength')"
+        >A senha deve ter pelo menos 6 caracteres.</span
+      >
+    </div>
+    <app-button
+      label="Criar conta"
+      [typeButton]="typeButtonEnum.BUTTON"
+      (onClick)="onSubmit()"
+    ></app-button>
+  </form>
+  
+  <app-button
+    label="Voltar"
+    [typeButton]="typeButtonEnum.LINK"
+    (onClick)="back()"
+  ></app-button>
+  

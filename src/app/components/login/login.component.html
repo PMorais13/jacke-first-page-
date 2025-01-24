@@ -1,0 +1,12 @@
+<div class="login" [ngSwitch]="activePage">
+  <app-welcome-login *ngSwitchCase="activePageEnum.INITIAL" class="blur-animation"></app-welcome-login>
+  <app-register *ngSwitchCase="activePageEnum.REGISTER" class="blur-animation"></app-register>
+  <app-enter-account *ngSwitchCase="activePageEnum.ENTER" class="blur-animation"></app-enter-account>
+</div>
+
+<!-- <div >
+  <p *ngSwitchCase="'online'">Usuário está online.</p>
+  <p *ngSwitchCase="'offline'">Usuário está offline.</p>
+  <p *ngSwitchCase="'busy'">Usuário está ocupado.</p>
+  <p *ngSwitchDefault>Estado do usuário desconhecido.</p>
+</div> -->

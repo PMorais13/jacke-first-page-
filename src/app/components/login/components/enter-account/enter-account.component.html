@@ -1,0 +1,48 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <input
+    id="email"
+    formControlName="email"
+    type="email"
+    placeholder="Digite seu email"
+  />
+  <div
+    *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+  >
+    <span *ngIf="loginForm.get('email')?.hasError('required')"
+      >Email é obrigatório.</span
+    >
+    <span *ngIf="loginForm.get('email')?.hasError('email')"
+      >Por favor, insira um email válido.</span
+    >
+  </div>
+  <input
+    id="password"
+    formControlName="password"
+    type="password"
+    placeholder="Digite sua senha"
+  />
+  <div
+    *ngIf="
+      loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+    "
+  >
+    <span *ngIf="loginForm.get('password')?.hasError('required')"
+      >Senha é obrigatória.</span
+    >
+    <span *ngIf="loginForm.get('password')?.hasError('minlength')">
+      A senha deve ter pelo menos 6 caracteres.
+    </span>
+  </div>
+
+  <app-button
+    label="Criar conta"
+    [typeButton]="typeButtonEnum.BUTTON"
+    (onClick)="onSubmit()"
+  ></app-button>
+</form>
+
+<app-button
+  label="Voltar"
+  [typeButton]="typeButtonEnum.LINK"
+  (onClick)="back()"
+></app-button>

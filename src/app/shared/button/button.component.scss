@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  width: 100%;
+  
+  button {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .primary {
+
+    background-color: #0761e8;
+    color: #fff;
+  }
+}
+
+.link {
+  a {
+    cursor: pointer;
+    background: none;
+    color: #000000;
+  }
+}

@@ -1,0 +1,19 @@
+.welcome {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+
+  h1 {
+    text-align: center;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,16 @@
+<div *ngIf="typeButton === typeButtonEnum.BUTTON" class="button">
+  <button
+    type="button"
+    class="stroke"
+    [ngClass]="style"
+    (click)="clickButton()"
+  >
+    {{ label }}
+  </button>
+</div>
+
+<div *ngIf="typeButton === typeButtonEnum.LINK" class="link">
+  <a (click)="clickButton()">
+    {{ label }}
+  </a>
+</div>
