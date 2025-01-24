@@ -1,0 +1,24 @@
+<form [formGroup]="formMenu">
+  <header>
+    <app-button
+      class="button-back"
+      label="<"
+      [typeButton]="typeButtonEnum.BUTTON"
+      (onClick)="goBack($event)"
+    ></app-button>
+    <app-button
+      class="button-exit"
+      label="Sair"
+      [typeButton]="typeButtonEnum.LINK"
+      (onClick)="goExit($event)"
+    ></app-button>
+    <div class="id-avatar">
+      <h2>Seu Perfil</h2>
+      <img [src]="formMenu.get('img')?.value" alt="Image" />
+    </div>
+  </header>
+  <input type="text" formControlName="name" readonly />
+  <input type="text" formControlName="age" readonly />
+  <input type="email" formControlName="email" readonly />
+  <input type="tel" formControlName="phone" readonly />
+</form>

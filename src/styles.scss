@@ -22,3 +22,20 @@ a {
 input {
   font-size: 16px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+  margin-bottom: 20px;
+
+
+  input {
+    height: 56px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    border-color: #afafaf;
+    padding: 5px 10px 5px 20px
+  }
+}

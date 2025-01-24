@@ -3,14 +3,14 @@
     type="button"
     class="stroke"
     [ngClass]="style"
-    (click)="clickButton()"
+    (click)="clickButton($event)"
   >
     {{ label }}
   </button>
 </div>
 
 <div *ngIf="typeButton === typeButtonEnum.LINK" class="link">
-  <a (click)="clickButton()">
+  <a (click)="clickButton($event)">
     {{ label }}
   </a>
 </div>

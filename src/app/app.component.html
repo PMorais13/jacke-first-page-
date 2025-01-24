@@ -1,1 +1,8 @@
-<app-login></app-login>
+<!-- <app-content></app-content> -->
+<footer>
+    <app-login *ngIf="!loggedIn"></app-login>
+     <div *ngIf="loggedIn" style="width: 100%; min-height: 50px;" (click)="teste()">
+        <img *ngIf="!openMenu" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Chuck_Norris_May_2015.jpg/330px-Chuck_Norris_May_2015.jpg" alt="">
+            <app-menu *ngIf="openMenu" (closeMenu)="closeMenu($event)"></app-menu>
+        </div>
+</footer>

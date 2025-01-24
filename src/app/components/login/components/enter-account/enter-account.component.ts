@@ -3,8 +3,14 @@ import { ButtonComponent } from '../../../../shared/button/button.component';
 import { ControlerService } from '../../../../services/controler/controler.service';
 import { ActivePage } from '../../../../enums/active-page.enum';
 import { BaseComponent } from '../../../../core/base/base.component';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthenticateService } from '../../../../services/authenticate/authenticate.service';
 
 @Component({
   selector: 'app-enter-account',
@@ -17,18 +23,13 @@ export class EnterAccountComponent extends BaseComponent implements OnInit {
 
   constructor(
     private readonly controler: ControlerService,
-    private readonly fb: FormBuilder
+    private readonly fb: FormBuilder,
+    private readonly authenticateService: AuthenticateService
   ) {
     super();
     this.loginForm = this.fb.group({
-      email: [
-        '',
-        [Validators.required, Validators.email], // Validação de email
-      ],
-      password: [
-        '',
-        [Validators.required, Validators.minLength(6)], // Senha com mínimo de 6 caracteres
-      ],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -36,7 +37,7 @@ export class EnterAccountComponent extends BaseComponent implements OnInit {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      this.authenticateService.setInfoLogin(true);
     } else {
       console.log('Form is not valid');
     }

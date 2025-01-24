@@ -10,28 +10,35 @@
     border-radius: 30px 30px 0px 0px;
     display: flex;
     justify-content: center;
-    transition: min-height 1s ease-in-out;
+    overflow: hidden;
+  }
+
+  .height-animation {
+    animation: heightSlide 0.5s ease-in-out forwards; 
   }
 }
 
 .blur-animation {
-  animation: blurToNormal 0.5s ease-in-out forwards; /* Animação de 0.5s */
+  animation: blurToNormal 0.5s ease-in-out forwards;
 }
 
 @keyframes blurToNormal {
   from {
     position: relative;
     right: -20px;
-    filter: blur(7px); /* Estado inicial */
+    filter: blur(7px);
   }
   to {
     right: 0;
-    filter: blur(0); /* Estado final */
+    filter: blur(0);
   }
 }
 
-@media only screen and (width: 800px) {
-  .login {
-    width: 50vw;
+@keyframes heightSlide {
+  from {
+    transition: height 10s ease-in-out;
+  }
+  to {
+    transition: height 10s ease-in-out;
   }
 }
