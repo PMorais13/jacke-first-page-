@@ -1,0 +1,9 @@
+:host {
+    background-image: url(./../assets/img/background-login.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Alinhar elementos em uma coluna */
+    justify-content: flex-end; /* Empurrar a filha para o final */
+}

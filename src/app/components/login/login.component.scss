@@ -1,10 +1,6 @@
 :host {
-  background-image: url(./../../../assets/img/background-login.png);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
   display: flex;
-  align-items: end;
+  justify-content: center;
 
   .login {
     height: auto;
@@ -22,7 +18,6 @@
   animation: blurToNormal 0.5s ease-in-out forwards; /* Animação de 0.5s */
 }
 
-/* Definindo os frames da animação */
 @keyframes blurToNormal {
   from {
     position: relative;
@@ -32,5 +27,11 @@
   to {
     right: 0;
     filter: blur(0); /* Estado final */
+  }
+}
+
+@media only screen and (width: 800px) {
+  .login {
+    width: 50vw;
   }
 }
